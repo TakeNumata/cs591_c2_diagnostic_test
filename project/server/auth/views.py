@@ -58,6 +58,7 @@ class RegisterAPI(MethodView):
             return make_response(jsonify(responseObject)), 202
 
 class Index(MethodView):
+    # Hello Party people
     def get(self):
         User_list = User.query.all()
         responseObject = []
