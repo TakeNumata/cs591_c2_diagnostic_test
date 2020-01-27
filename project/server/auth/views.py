@@ -59,10 +59,10 @@ class RegisterAPI(MethodView):
 
 class Index(MethodView):
     def get(self):
-        responseObject = {
-            'status': 'success',
-            'message': 'Request successful.'
-        }
+        User_list = User.query.all()
+        responseObject = []
+        for user in User_list:
+            responseObject.append(user.email)
         return make_response(jsonify(responseObject)), 201
 
 # define the API resources
@@ -79,5 +79,5 @@ auth_blueprint.add_url_rule(
 users_blueprint.add_url_rule(
     '/users/index',
     view_func=index_view,
-    methods=['POST', 'GET']
+    methods=['GET']
 )
