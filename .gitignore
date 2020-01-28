@@ -13,5 +13,4 @@ env.sh
 migrations
 
 # Add SQLITE DB
-diagnostic
-diagnostic_test
+
